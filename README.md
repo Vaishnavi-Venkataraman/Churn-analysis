@@ -1,7 +1,7 @@
 # **Customer Churn Analysis**
 This project analyzes customer churn — why customers stop using a company's products or services.
 Using a customer dataset, it transforms variables, groups tenure, and explores key factors influencing churn.
-dataset(https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+[dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
 
 ### Key Goals:
 **Exploratory Data Analysis (EDA):** Visualizing correlations and churn patterns based on tenure, gender, senior citizen status, and monthly charges using ggplot2 and corrplot.
