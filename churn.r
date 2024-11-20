@@ -1,6 +1,5 @@
 #https://www.kaggle.com/datasets/blastchar/telco-customer-churn - dataset link
 
-
 if (!require("corrplot")) install.packages("corrplot")
 if (!require("gridExtra")) install.packages("gridExtra")
 if (!require("ggthemes")) install.packages("ggthemes")
@@ -13,15 +12,13 @@ library(ggplot2)
 library(caret)
 library(MASS)
 
-
-churn <- read.csv('C:\\Users\\hhmp2\\Desktop\\R\\Dataset.csv')
+churn <- read.csv('Dataset.csv')
 churn <- churn[complete.cases(churn), ]  # Remove rows with missing values
 cols_recode1 <- c(10:15)
 for (i in 1:ncol(churn[, cols_recode1])) {
   churn[, cols_recode1][, i] <- as.factor(mapvalues(churn[, cols_recode1][, i],from = c("No internet service"),to = c("No")))
 }
 churn$MultipleLines <- as.factor(mapvalues(churn$MultipleLines,from = c("No phone service"),to = c("No")))
-
 
 group_tenure <- function(tenure) {
   if (tenure >= 0 & tenure <= 12) {
@@ -43,7 +40,6 @@ churn$customerID <- NULL
 churn$tenure <- NULL
 churn$Churn <- as.factor(mapvalues(churn$Churn,from = c("No", "Yes"),to = c("0", "1")))
 
-
 menu_options <- c(
   "1. Exploratory Data Analysis (EDA)",
   "2. Model Building and Evaluation",
@@ -51,7 +47,6 @@ menu_options <- c(
   "4. Hypothesis Testing",
   "0. Quit"
 )
-
 
 while (TRUE) {
   cat("\nChoose an option:\n")
